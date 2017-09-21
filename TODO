@@ -1,0 +1,48 @@
+
+next:
+
+scale
+translate
+combine
+streach_contrast
+normalize
+
+basic filters from PIL
+
+color transform
+view image with nimx
+draw functions
+
+# Not implemented yet
+# 
+# Loading:
+# new
+# loadFromMemory
+# loadFromBuffer
+#
+# Simple transforms:
+# scale
+# rotate90
+# paste
+# convolve
+# normalize
+# blend
+#
+# Enhance:
+# 
+# Colorspace conversions:
+# rgb2lab
+# lab2rgb
+# rgb2yuv
+# yuv2rgb
+# rgb2y
+# rgb2hsl
+# hsl2rgb
+# rgb2hsv
+# hsv2rgb
+
+draw rect
+draw text
+tile images
+center_crop
+random_crop
