@@ -1,9 +1,4 @@
-import vision
-import stb_image/write as stbiw
 import httpclient, json, base64
-import arraymancer
-
-export json
 
 proc webEncodeData(data, mimeType: string): string =
   return "data:image/" & mimeType & ";base64," & base64.encode(data, newLine="")

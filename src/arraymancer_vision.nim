@@ -5,13 +5,11 @@ import stb_image/write as stbiw
 import arraymancer
 
 include
-  utils,
-  imageio,
-  transform,
-  filters,
-  scale
+  arraymancer_vision/utils,
+  arraymancer_vision/imageio,
+  arraymancer_vision/transform,
+  arraymancer_vision/filters,
+  arraymancer_vision/scale,
+  arraymancer_vision/visdom
 
-import visdom
-
-export visdom
 export arraymancer

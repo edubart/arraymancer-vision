@@ -145,9 +145,9 @@ suite "Image IO":
     ]].toTensor()
 
   test "Image load and save":
-    let lena = vision.load("examples/lena.png")
-    let lena2 = vision.loadFromMemory(lena.toBMP())
+    let lena = load("examples/lena.png")
+    let lena2 = loadFromMemory(lena.toBMP())
     check: lena2 == lena
 
     expect(IOError):
-      discard vision.load("inexhistent_image_file.png")
+      discard load("inexhistent_image_file.png")
