@@ -56,13 +56,16 @@ image.save("examples/preprocessed_lena.png")
 This quickstart example is inside examples directory, you can run it by
 cloning the repo and running with `nim c -r examples/quickstart.nim`
 
+You can visualize all predefined filters having visdom running and then
+running the filters example with `nim c -r examples/quickstart.nim`
+
 ## API
 
-Documentation of the completely available API you read [here](https://rawgit.com/edubart/arraymancer-vision/master/doc/documentation.html)
+Documentation of the completely available API is [here](https://rawgit.com/edubart/arraymancer-vision/master/doc/documentation.html)
 
 ### Details
 
-The library operates all images as Tensor[uint8] with dimensions CxHxW, where C is in RGBA colorspace, note that other image libraries usually operates with images in HxWxC format, so remember this when using. This design choice is to optimize and facilitate operation on images in deep learning tasks.
+The library operates all images as `Tensor[uint8]` with dimensions CxHxW, where C is in RGBA colorspace, note that other image libraries usually operates with images in HxWxC format, so remember this when using. This design choice is to optimize and facilitate operation on images in deep learning tasks.
 
 ## TODO
 
