@@ -57,7 +57,7 @@ This quickstart example is inside examples directory, you can run it by
 cloning the repo and running with `nim c -r examples/quickstart.nim`
 
 You can visualize all predefined filters having visdom running and then
-running the filters example with `nim c -r examples/quickstart.nim`
+running the filters example with `nim c -r examples/visualize_filters.nim`
 
 ## API
 
