@@ -54,7 +54,7 @@ image.save("preprocessed_lena.png")
 
 ## API
 
-Documentation of the completely available API you read [here](https://rawgit.com/edubart/arraymancer-vision/master/docs/documentation.html)
+Documentation of the completely available API you read [here](https://rawgit.com/edubart/arraymancer-vision/master/doc/documentation.html)
 
 ### Details
 
