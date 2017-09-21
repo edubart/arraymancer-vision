@@ -1,5 +1,5 @@
 ### Package
-version       = "0.0.1"
+version       = "0.0.2"
 author        = "Eduardo Barthel"
 description   = "Image transformation and visualization utilities for arraymancer"
 license       = "Apache License 2.0"

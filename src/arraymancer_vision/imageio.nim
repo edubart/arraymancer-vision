@@ -31,7 +31,7 @@ proc pixels*(img: Tensor[uint8]): seq[uint8] =
 
 proc load*(filename: string, desired_channels: int = 0): Tensor[uint8] =
   ## Load image from file, with the desired number of channels,
-  ## into a contigous CxHxW Tensor[uint8]. Desired channels defaults to 0 meaning
+  ## into a contiguous CxHxW Tensor[uint8]. Desired channels defaults to 0 meaning
   ## that it will auto detect the number of channels, the returned image tensor
   ## will be in the CxHxW format even for images with a single channel.
   ##

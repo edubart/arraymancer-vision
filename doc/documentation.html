@@ -1350,7 +1350,7 @@ Convert image from CxHxW convetion to the HxWxC convention, where C,W,H stands f
 </dd>
 <dt id="load"><a name="load,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">load</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">desired_channels</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Tensor</span><span class="Other">[</span><span class="Identifier">uint8</span><span class="Other">]</span></pre></dt>
 <dd>
-<p>Load image from file, with the desired number of channels, into a contigous CxHxW Tensor[uint8]. Desired channels defaults to 0 meaning that it will auto detect the number of channels, the returned image tensor will be in the CxHxW format even for images with a single channel.</p>
+<p>Load image from file, with the desired number of channels, into a contiguous CxHxW Tensor[uint8]. Desired channels defaults to 0 meaning that it will auto detect the number of channels, the returned image tensor will be in the CxHxW format even for images with a single channel.</p>
 <p>Supports PNG, JPG, BMP, TGA and HDR formats</p>
 <p>On error an IOError exception will be thrown</p>
 

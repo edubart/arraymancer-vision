@@ -35,7 +35,7 @@ Then go to http://localhost:8097
 import arraymancer_vision
 
 # Load image from file into a CxHxW Tensor[uint8]
-var image = load("assets/lena.png")
+var image = load("examples/lena.png")
 
 # Do some preprocessing
 image = image.center_crop(128, 128)
@@ -49,8 +49,11 @@ let vis = newVisdomClient()
 vis.image(image)
 
 # Save it to a file
-image.save("preprocessed_lena.png")
+image.save("examples/preprocessed_lena.png")
 ```
+
+This quickstart example is inside examples directory, you can run it by
+cloning the repo and running with `nim c -r examples/quickstart.nim`
 
 ## API
 
