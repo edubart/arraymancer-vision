@@ -5,7 +5,7 @@ description   = "Image transformation and visualization utilities for arraymance
 license       = "Apache License 2.0"
 
 ### Dependencies
-requires "nim >= 0.17.2", "arraymancer >= 0.1.3"
+requires "nim >= 0.17.2", "arraymancer >= 0.1.3", "stb_image >= 1.6"
 
 ## Install files
 srcDir = "src"
