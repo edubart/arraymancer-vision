@@ -17,7 +17,7 @@ Simple library for image loading, preprocessing and visualization for working wi
 Install using nimble package manager:
 
 ```Bash
-nimble install arraymancer-vision
+nimble install arraymancer_vision
 ```
 
 For visualizing you have to install visdom and run it:

@@ -125,7 +125,7 @@ proc correlate2d*[T,U](input: Tensor[T], weights: Tensor[U], pad: int = 0, mode:
 proc convolve2d*(input: Tensor[uint8], weights: Tensor[int], pad: int, mode: PadMode = PadConstant, cval: int = 0): Tensor[int] =
   ## Convolve an image with the given kernel weights, like correlate but
   ## it flips the kernel before.
-  let flipped_weights = weights.unsafeView(_, ^1..0|-1, ^1..0|-1)
+  let flipped_weights = weights.unsafeSlice(_, ^1..0|-1, ^1..0|-1)
   result = correlate2d(input, flipped_weights, pad, mode, cval)
 
 proc tile_collection*(imgs: Tensor[uint8], max_width: int = 0): Tensor[uint8] =
