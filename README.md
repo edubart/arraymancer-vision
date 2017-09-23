@@ -63,7 +63,7 @@ running the filters example with `nim c -r examples/visualize_filters.nim`
 
 Documentation of the completely available API is [here](https://rawgit.com/edubart/arraymancer-vision/master/doc/documentation.html)
 
-### Details
+## Details
 
 The library operates all images as `Tensor[uint8]` with dimensions CxHxW, where C is in RGBA colorspace, note that other image libraries usually operates with images in HxWxC format, so remember this when using. This design choice is to optimize and facilitate operation on images in deep learning tasks.
 

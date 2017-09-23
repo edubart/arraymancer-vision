@@ -127,3 +127,24 @@ proc convolve2d*(input: Tensor[uint8], weights: Tensor[int], pad: int, mode: Pad
   ## it flips the kernel before.
   let flipped_weights = weights.unsafeView(_, ^1..0|-1, ^1..0|-1)
   result = correlate2d(input, flipped_weights, pad, mode, cval)
+
+proc tile_collection*(imgs: Tensor[uint8], max_width: int = 0): Tensor[uint8] =
+  assert imgs.rank == 4
+  let
+    count = imgs.shape[0]
+    cell_width = imgs.width
+    cell_height = imgs.height
+  var cols : int
+  if max_width == 0:
+    cols = ceil(sqrt(count.float)).int
+  else:
+    cols = max_width div cell_width
+  var rows = ceil(count / cols).int
+
+  result = zeros([imgs.channels, rows*cell_height, cols*cell_width], uint8)
+  for i in 0..<count:
+    let
+      y = (i div cols) * cell_height
+      x = (i mod cols) * cell_width
+    result[_, y..<(y+cell_height), x..<(x+cell_width)] = imgs[i, _, _, _].unsafeSqueeze(0)
+

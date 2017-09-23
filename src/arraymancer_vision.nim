@@ -1,4 +1,4 @@
-import math, strutils, sequtils, random, typetraits, future, macros
+import math, strutils, sequtils, random, typetraits, future, macros, os
 
 import stb_image/read as stbi
 import stb_image/write as stbiw

@@ -85,6 +85,14 @@ proc filter_smooth*[T](img: Tensor[T]): Tensor[T] =
     [1,  1,  1],
   ]].toTensor(), 13)
 
+proc filter_find_edges*[T](img: Tensor[T]): Tensor[T] =
+  ## Find edges of image using a predefied kernel
+  img.kernel([[
+    [-1, -1, -1],
+    [-1,  8, -1],
+    [-1, -1, -1],
+  ]].toTensor(), 1)
+
 proc filter_smooth_more*[T](img: Tensor[T]): Tensor[T] =
   ## Smooth more an image using a predefied kernel
   img.kernel([[
@@ -94,11 +102,3 @@ proc filter_smooth_more*[T](img: Tensor[T]): Tensor[T] =
     [1,  5,  5,  5,  1],
     [1,  1,  1,  1,  1]
   ]].toTensor(), 100)
-
-proc filter_find_edges*[T](img: Tensor[T]): Tensor[T] =
-  ## Find edges of image using a predefied kernel
-  img.kernel([[
-    [-1, -1, -1],
-    [-1,  8, -1],
-    [-1, -1, -1],
-  ]].toTensor(), 1)

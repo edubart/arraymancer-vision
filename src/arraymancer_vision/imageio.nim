@@ -54,6 +54,22 @@ proc loadFromMemory*(contents: string, desired_channels: int = 0): Tensor[uint8]
   result = pixels.unsafeToTensorReshape([height, width, channels]).hwc2chw().asContiguous()
   assert(desired_channels == 0 or channels == desired_channels)
 
+proc loadFromDir*(dir: string, desired_channels: int = 0): seq[Tensor[uint8]] =
+  ## Load batch of images from a directory into a seq of tensors,
+  ## the load is non recursive, throws an IOError exception on
+  ## error.
+
+  if not dirExists(dir):
+    raise newException(IOError, "Directory not found: " & dir)
+
+  result = newSeq[Tensor[uint8]]()
+  for kind, path in walkDir(dir):
+    if kind == pcFile:
+      result.add(load(path, desired_channels))
+
+  if result.len == 0:
+    raise newException(IOError, "No images found for loading in directory: " & dir)
+
 proc save*(img: Tensor[uint8], filename: string, jpeg_quality: int = 100) =
   ## Save an image to a file, supports PNG, BMP, TGA and JPG.
   ## Argument `jpeg_quality` can be passed to inform the saving
