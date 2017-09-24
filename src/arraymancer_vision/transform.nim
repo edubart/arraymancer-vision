@@ -129,6 +129,9 @@ proc convolve2d*(input: Tensor[uint8], weights: Tensor[int], pad: int, mode: Pad
   result = correlate2d(input, flipped_weights, pad, mode, cval)
 
 proc tile_collection*(imgs: Tensor[uint8], max_width: int = 0): Tensor[uint8] =
+  ## Combine multiple images into one big tiled image and returns it.
+  ## The new generated image width will be at maximum the given max width if
+  ## supplied, otherwise will be calculated to create a square image.
   assert imgs.rank == 4
   let
     count = imgs.shape[0]

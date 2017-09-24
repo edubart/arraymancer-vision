@@ -61,7 +61,7 @@ running the filters example with `nim c -r examples/visualize_filters.nim`
 
 ## API
 
-Documentation of the completely available API is [here](https://rawgit.com/edubart/arraymancer-vision/master/doc/documentation.html)
+Documentation of the completely available API is [here](https://rawgit.com/edubart/arraymancer-vision/master/doc/arraymancer_vision.html)
 
 ## Details
 
