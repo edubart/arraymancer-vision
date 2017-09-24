@@ -69,6 +69,5 @@ The library operates all images as `Tensor[uint8]` with dimensions CxHxW, where 
 
 ## TODO
 
-* Loading multiple images
 * Simple drawing routines
 * Colorspace conversions
