@@ -75,7 +75,7 @@ proc im2col*[T](input: Tensor[T], ksize: int, pad: int = 0, mode: PadMode, pad_c
     channels_col = channels * ksize * ksize
     height_col = height + (2 * pad) - ksize + 1
     width_col = width + (2 * pad) - ksize + 1
-  result = zeros([channels_col, height_col * width_col], T)
+  result = newTensorUninit[T]([channels_col, height_col * width_col])
   for c in 0..<channels_col:
     let
       w_offset = (c mod ksize) - pad
@@ -90,8 +90,7 @@ proc im2col*[T](input: Tensor[T], ksize: int, pad: int = 0, mode: PadMode, pad_c
         if row < 0 or col < 0 or row >= height or col >= width:
           case mode:
             of PadConstant:
-              if pad_constant != 0:
-                result[c, offset_col + w] = pad_constant
+              result[c, offset_col + w] = pad_constant
             of PadNearest:
               result[c, offset_col + w] = input[c_offset, clamp(row, 0, height-1), clamp(col, 0, width-1)]
         else:
@@ -144,7 +143,7 @@ proc tile_collection*(imgs: Tensor[uint8], max_width: int = 0): Tensor[uint8] =
     cols = max_width div cell_width
   var rows = ceil(count / cols).int
 
-  result = zeros([imgs.channels, rows*cell_height, cols*cell_width], uint8)
+  result = zeros[uint8]([imgs.channels, rows*cell_height, cols*cell_width])
   for i in 0..<count:
     let
       y = (i div cols) * cell_height
